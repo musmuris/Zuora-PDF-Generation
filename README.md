@@ -16,4 +16,12 @@ PDF, then download that, save it as a Salesforce file and make a URL for it
 There are also some auxiliary classes for testing etc.
 and also a javascript button that we use to display the page in an iframe. Note that Salesforce Lightning doesn't allow Javascript buttons, so we'll have to find an alternative method when we finally move to that!
 
+Most of the interesting stuff is in:
+
+* [ZuoraGenerateQuotePdfController.cls](classes/ZuoraGenerateQuotePdfController.cls)
+    * VF controller calls that drives the below
+* [ZuoraQuoteDocumentUtil.cls](classes/ZuoraQuoteDocumentUtil.cls)
+    * The actually useful bit
+
+
 

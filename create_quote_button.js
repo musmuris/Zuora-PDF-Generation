@@ -1,3 +1,5 @@
+// We have this as a custom button on the zqu__Quote__c object
+
 var buttonScope = buttonScope || {}; 
 
 (function() {

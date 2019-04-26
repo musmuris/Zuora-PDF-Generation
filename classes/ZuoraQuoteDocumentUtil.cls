@@ -2,6 +2,8 @@ public class ZuoraQuoteDocumentUtil
 {
     private final ILog m_Log;
     private final IZuoraApiRequestSender m_ZuoraApiRequestSender;
+    private final static s_ProdOrgId = '<production ORG Id>';
+    
     public ZuoraQuoteDocumentUtil( IZuoraApiRequestSender requestSender, ILog log )
     {
         m_ZuoraApiRequestSender = requestSender;
@@ -159,8 +161,8 @@ public class ZuoraQuoteDocumentUtil
     private HttpRequest buildZuoraRequest(String method, String endpoint)
     {
         String hostName = 
-            UserInfo.getOrganizationId() == '<production ORGId>' ? 'rest.eu.zuora.com' 
-                                                                 : 'rest.sandbox.eu.zuora.com';
+            UserInfo.getOrganizationId() == s_ProdOrgId ? 'rest.eu.zuora.com' 
+                                                        : 'rest.sandbox.eu.zuora.com';
         string zuoraApiUrl = 'https://' + hostName + endpoint;
         m_Log.debug('Zuora URL: ' + zuoraApiUrl);                
         HttpRequest request = new HttpRequest();
